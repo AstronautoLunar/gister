@@ -1,4 +1,5 @@
 // Core
+import { StatusBar } from "react-native";
 import styled from "styled-components/native";
 
 // Styles
@@ -10,6 +11,8 @@ export const Screen = styled.View`
   align-items: center;
 
   background-color: ${colors.dominat};
+
+  padding-top: ${StatusBar.currentHeight}px;
 `;
 
 export const Text = styled.Text`
