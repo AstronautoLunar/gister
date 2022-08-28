@@ -25,6 +25,9 @@ export default function Section<Data>({
       <ListItems
         data={data}
         horizontal
+        contentContainerStyle={{
+          alignItems: "flex-start"
+        }}
         renderItem={renderItem}
       />
     </Container>

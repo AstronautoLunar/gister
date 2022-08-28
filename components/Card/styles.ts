@@ -6,16 +6,17 @@ import colors from "../../styles/colors";
 
 export const Container = styled.View`
   width: 125px;
-  height: 200px;
+  /* height: 200px; */
 
   margin-right: 24px;
 
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 export const Image = styled.Image`
-  flex: 1;
+  width: 100%;
+  height: 100px;
 
   margin-bottom: 8px;
 
@@ -26,7 +27,7 @@ export const Title = styled.Text`
   color: ${colors.secondary};
 
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
 
   margin-bottom: 4px;
 `;

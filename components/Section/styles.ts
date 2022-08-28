@@ -5,6 +5,8 @@ import styled from "styled-components/native";
 import colors from "../../styles/colors";
 
 export const Container = styled.View`
+  /* height: 200px; */
+
   flex-direction: column;
 
   margin-left: 24px;

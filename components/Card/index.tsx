@@ -1,5 +1,5 @@
 // Core
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 
 // Components
@@ -10,31 +10,39 @@ import {
   Description 
 } from "./styles";
 
+const FIFTY_MILISECONDS = 500;
+
 type CardTypes = {
   src: string;
   title: string;
-  description?: string;
 }
 
 export default function Card({ 
   src, 
-  title, 
-  description
+  title
 }: CardTypes) {
   const opacity = useRef(new Animated.Value(0)).current;
 
-
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: FIFTY_MILISECONDS,
+      useNativeDriver: true,
+    });
+  }, []);
 
   return (
-    <Container>
-      <Image
-        source={{
-          uri: src,
-        }}
-        resizeMode="cover"
-      />
-      <Title>{ title }</Title>
-      <Description>{ `${description?.slice(0, 48)}...` }</Description>
-    </Container>
+    <Animated.View>
+      <Container>
+        <Image
+          source={{
+            uri: src,
+          }}
+          resizeMode="cover"
+          resuzeMethod="scale"
+        />
+        <Title>{ title }</Title>
+      </Container>
+    </Animated.View> 
   )
 }
